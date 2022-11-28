@@ -11,15 +11,19 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *one = list;
 	listint_t *two = list;
+	listint_t *one = list;
 
-	while (one != NULL && two != NULL)
+	if (list == NULL || list->next == NULL)
+		return (0);
+
+	while (one && two && two->next)
 	{
-		one = list->next;
-		two = list->next->next;
 		if (one == two)
 			return (1);
+
+		one = list->next;
+		two = list->next->next;
 	}
 	return (0);
 }
