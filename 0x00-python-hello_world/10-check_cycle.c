@@ -11,17 +11,16 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *two;
-	listint_t *one;
-
 	if (list == NULL || list->next == NULL)
 		return (0);
 
-	one = malloc(sizeof(list));
+	listint_t *one = malloc(sizeof(list));
+
 	if (one == NULL)
 		return (0);
 
-	two = malloc(sizeof(list));
+	listint_t *two = malloc(sizeof(list));
+
 	if (two == NULL)
 		return (0);
 
