@@ -1,44 +1,31 @@
-#include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * check_cycle - function to check if there is a cycle in linked lists
+ * check_cycle - Checks if a singly-linked list contains a cycle.
+ * @list: A singly-linked list.
  *
- * @list: singly linked list
- * Return: 1 if cycle, 0 if not
+ * Return: If there is no cycle - 0.
+ *         If there is a cycle - 1.
  */
-
 int check_cycle(listint_t *list)
 {
-<<<<<<< HEAD
+	listint_t *turtle, *hare;
+
 	if (list == NULL || list->next == NULL)
 		return (0);
 
-	listint_t *one = malloc(sizeof(list));
+	turtle = list->next;
+	hare = list->next->next;
 
-	if (one == NULL)
-		return (0);
-
-	listint_t *two = malloc(sizeof(list));
-
-	if (two == NULL)
-		return (0);
-
-	while (one && two && two->next)
-=======
-	listint_t *one = list;
-	listint_t *two = list;
-
-	while (one != NULL && two != NULL)
->>>>>>> parent of 880d3d4 (solved)
+	while (turtle && hare && hare->next)
 	{
-		one = list->next;
-		two = list->next->next;
-		if (one == two)
+		if (turtle == hare)
 			return (1);
+
+		turtle = turtle->next;
+		hare = hare->next->next;
 	}
-	free(one);
-	free(two);
+
 	return (0);
 }
