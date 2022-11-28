@@ -17,6 +17,14 @@ int check_cycle(listint_t *list)
 	if (list == NULL || list->next == NULL)
 		return (0);
 
+	one = malloc(sizeof(list));
+	if (one == NULL)
+		return (0);
+
+	two = malloc(sizeof(list));
+	if (two == NULL)
+		return (0);
+
 	while (one && two && two->next)
 	{
 		if (one == two)
@@ -25,5 +33,7 @@ int check_cycle(listint_t *list)
 		one = list->next;
 		two = list->next->next;
 	}
+	free(one);
+	free(two);
 	return (0);
 }
