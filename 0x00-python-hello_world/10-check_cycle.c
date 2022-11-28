@@ -11,6 +11,7 @@
 
 int check_cycle(listint_t *list)
 {
+<<<<<<< HEAD
 	if (list == NULL || list->next == NULL)
 		return (0);
 
@@ -25,12 +26,17 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	while (one && two && two->next)
-	{
-		if (one == two)
-			return (1);
+=======
+	listint_t *one = list;
+	listint_t *two = list;
 
+	while (one != NULL && two != NULL)
+>>>>>>> parent of 880d3d4 (solved)
+	{
 		one = list->next;
 		two = list->next->next;
+		if (one == two)
+			return (1);
 	}
 	free(one);
 	free(two);
