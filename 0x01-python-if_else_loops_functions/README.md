@@ -1,0 +1,1 @@
+This directory contains projects carried out for PYTHON IF ELSE LOOP
