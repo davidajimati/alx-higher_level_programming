@@ -18,12 +18,11 @@ if __name__ == "__main__":
         a = int(argv[1])
         b = int(argv[3])
 
-        match operator:
-            case '+':
-                print("{:d} + {:d} = {:d}" .format(a, b, add(a, b)))
-            case '-':
-                print("{:d} + {:d} = {:d}" .format(a, b, sub(a, b)))
-            case '/':
-                print("{:d} + {:d} = {:d}" .format(a, b, div(a, b)))
-            case '*':
-                print("{:d} + {:d} = {:d}" .format(a, b, mul(a, b)))
+        if operator == '+':
+            print("{:d} + {:d} = {:d}" .format(a, b, add(a, b)))
+        elif operator == '-':
+            print("{:d} - {:d} = {:d}" .format(a, b, sub(a, b)))
+        elif operator == '/':
+            print("{:d} / {:d} = {:d}" .format(a, b, div(a, b)))
+        if operator == '*':
+            print("{:d} * {:d} = {:d}" .format(a, b, mul(a, b)))
