@@ -7,16 +7,19 @@ if __name__ == "__main__":
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
+
     else:
-        operator = argv[3]
+        operator = argv[2]
+        a = int(argv[1])
+        b = int(argv[3])
 
         match operator:
             case '+':
-                print("{:d}" .format(int(argv[2]) + int(argv[4])))
+                print("{:d}" .format(add(a, b)))
             case '-':
-                print("{:d}" .format(int(argv[2]) - int(argv[4])))
+                print("{:d}" .format(sub(a, b)))
             case '/':
-                print("{:d}" .format(int(argv[2]) / int(argv[4])))
+                print("{:d}" .format(div(a, b)))
             case '*':
-                print("{:d}" .format(int(argv[2]) * int(argv[4])))
-    sys.exit(0)
+                print("{:d}" .format(mul(a, b)))
+        sys.exit(0)
