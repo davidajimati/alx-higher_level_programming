@@ -6,12 +6,12 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     l1 = list(tuple_a)
     l2 = list(tuple_b)
-    lf = [0, 0]
+    # lf = [0, 0]
 
-    l1 += [0, 0]
-    l2 += [0, 0]
+    # l1 += [0, 0]
+    # l2 += [0, 0]
 
-    lf[0] = l1[0] + l2[0]
-    lf[1] = l1[1] + l2[1]
+    # lf[0] = l1[0] + l2[0]
+    # lf[1] = l1[1] + l2[1]
 
-    return tuple(lf)
+    return tuple(l1[0] + l2[0], l1[1] + l2[1])
