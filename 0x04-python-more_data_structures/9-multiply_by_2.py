@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    doubled = map(lambda i: i * 2, a_dictionary.values())
-    return (list(doubled))
+    doubled = {}
+    for key, value in a_dictionary.items():
+        doubled[key] = value * 2
+    return (doubled)
