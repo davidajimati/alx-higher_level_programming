@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+# FUNTION TO CONVERT ROMAN NUMRALS TO INTEGER (ARABIC)
 def roman_to_int(roman_string):
+    if not roman_string or type(roman_string) != str:
+        return None
+
     roman_to_int_map = {
         "I": 1,
         "V": 5,
