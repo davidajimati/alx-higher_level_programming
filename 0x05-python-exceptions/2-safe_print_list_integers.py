@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     try:
-        lent = 0
+        cnt = 0
+        ptd = 0
         for item in my_list:
-            lent += 1
-        if x >= lent:
+            cnt += 1
+        if x > cnt:
             raise IndexError
 
-        new_ls = []
-        for item in my_list:
-            if type(item) == int:
-                new_ls.append(item)
+        for item in range(0, x):
+            try:
+                print("{:d}".format(my_list[item]), end='')
+                ptd += 1
+            except (ValueError, TypeError):
+                continue
+        print()
 
-        print("{:d}" .format(*new_ls))
-        return (lent)
+        return (ptd)
 
-    except IndexError:
-        print("list index out of range")
+    except (TypeError, IndexError):
+        print("IndexError: list index out of range")
