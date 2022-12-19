@@ -7,7 +7,7 @@ def list_division(my_list_1, my_list_2, list_length):
             if j == 0:
                 print("division by 0")
 
-        if not isinstance(l1, (int, float)) or not isinstance(l2, (int, float)):
+        if not (isinstance(l1, (int, float)) and isinstance(l2, (int, float))):
             print("wrong type")
 
         if list_length > len(l1) or list_length > len(l2):
