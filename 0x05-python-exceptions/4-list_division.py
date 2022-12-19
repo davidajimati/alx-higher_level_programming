@@ -17,18 +17,14 @@ def list_division(my_list_1, my_list_2, list_length):
         print("out of range")
 
     finally:
-        try:
-            return (new_list)
-        except:
-            # print("no new lists")
-            aux = max(l1, l2)
-            new_list = []
-            for i in range(len(aux)):
-                if isinstance(aux[i], (int, float)) and l2[i]:
-                    if isinstance(l2[i], (int, float)):
-                        new_list.append(aux[i] / l2[i])
-                    else:
-                        new_list.append(0)
+        aux = max(l1, l2)
+        new_list = []
+        for i in range(len(aux)):
+            if isinstance(aux[i], (int, float)) and l2[i]:
+                if isinstance(l2[i], (int, float)):
+                    new_list.append(aux[i] / l2[i])
                 else:
                     new_list.append(0)
-            return (new_list)
+            else:
+                new_list.append(0)
+        return (new_list)
