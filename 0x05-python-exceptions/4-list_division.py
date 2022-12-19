@@ -1,20 +1,34 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
+    l1 = my_list_1
+    l2 = my_list_2
     try:
-        if list_length > max(my_list_1, my_list_2):
-            raise IndexError
+        for j in l2:
+            if j == 0:
+                print("division by 0")
 
-        idx = 0
-        new_list = []
-        for item in my_list_1:
-            if type(item) != int and type(item) != float:
-                raise TypeError
-            new_list[idx] = my_list_1[idx] / my_list_2[idx]
-        return (new_list)
+        if not isinstance(l1, (int, float)) or not isinstance(l2, (int, float)):
+            print("wrong type")
+
+        if list_length > len(l1) or list_length > len(l2):
+            raise IndexError
 
     except IndexError:
         print("out of range")
-    except TypeError:
-        print("wrong type")
-    except ZeroDivisionError:
-        print("division by 0")
+
+    finally:
+        try:
+            return (new_list)
+        except:
+            # print("no new lists")
+            aux = max(l1, l2)
+            new_list = []
+            for i in range(len(aux)):
+                if isinstance(aux[i], (int, float)) and l2[i]:
+                    if isinstance(l2[i], (int, float)):
+                        new_list.append(aux[i] / l2[i])
+                    else:
+                        new_list.append(0)
+                else:
+                    new_list.append(0)
+            return (new_list)
