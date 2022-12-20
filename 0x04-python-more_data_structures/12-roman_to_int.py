@@ -4,6 +4,10 @@ def roman_to_int(roman_string):
     if not roman_string or type(roman_string) != str:
         return None
 
+    for i in roman_string:
+        if i.islower() or type(i) != str:
+            return (None)
+
     roman_to_int_map = {
         "I": 1,
         "V": 5,
