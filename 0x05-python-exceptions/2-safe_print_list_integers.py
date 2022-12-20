@@ -7,7 +7,6 @@ def safe_print_list_integers(my_list=[], x=0):
             cnt += 1
         if x > cnt:
             raise IndexError
-
         for item in range(0, x):
             try:
                 print("{:d}".format(my_list[item]), end='')
@@ -15,8 +14,6 @@ def safe_print_list_integers(my_list=[], x=0):
             except (ValueError, TypeError):
                 continue
         print()
-
         return (ptd)
-
     except (TypeError, IndexError):
         print("IndexError: list index out of range")
