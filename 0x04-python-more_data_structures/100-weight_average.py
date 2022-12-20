@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-#Function to calcutate weighted average
+# Function to calcutate weighted average
 def weight_average(my_list=[]):
-    #if list is empty return 0
+    # if list is empty return 0
     if not my_list or len(my_list) == 0:
         return (0)
 
-    #declare variable to hold answer and the division of mul cell
+    # declare variable to hold answer and the division of mul cell
     answer = 0
     mul = 0
     den = 0
