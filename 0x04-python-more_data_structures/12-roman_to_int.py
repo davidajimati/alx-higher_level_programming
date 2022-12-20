@@ -2,11 +2,11 @@
 # FUNTION TO CONVERT ROMAN NUMRALS TO INTEGER (ARABIC)
 def roman_to_int(roman_string):
     if not roman_string or type(roman_string) != str:
-        return None
+        return (0)
 
     for i in roman_string:
         if i.islower() or type(i) != str:
-            return (None)
+            return (0)
 
     roman_to_int_map = {
         "I": 1,
