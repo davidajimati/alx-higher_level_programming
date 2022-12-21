@@ -7,14 +7,4 @@ class Square:
     return types are annotated according to `PEP 484`_, they do not need to be
     included in the docstring:
 
-    Args:
-        param1 (int): The first parameter.
-        param2 (str): The second parameter.
-
-    Returns:
-        bool: The return value. True for success, False otherwise.
-
-    .. _PEP 484:
-        https://www.python.org/dev/peps/pep-0484/
-
     """
