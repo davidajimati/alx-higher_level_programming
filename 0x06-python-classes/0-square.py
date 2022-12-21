@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 class Square:
-    ''' Declares class string
-        containing no instance
+    ''' Declares class string.
     '''
     pass
+    '''containing no instance.
+    '''
