@@ -2,15 +2,17 @@
 '''Class to contain the methods
     Attributes of it's objects.
 '''
+# Excellence or Nothing!
 
 
 class Square:
     ''' contain the methods
-        Attributes of it's ojects
+        Attributes of it's objects
     '''
 
-    def __init__(self, size=0):
-        self.size = size
+    def __init__(self, size=0, position=(0, 0)):
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -22,16 +24,27 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
     def area(self):
         a = self.__size * self.__size
         return a
 
     def my_print(self):
-        if self.__siz e == 0:
+        if self.__size == 0:
             print("")
         for i in range(0, self.__size):
             for j in range(0, self.__size):
                 print("#", end="")
             print()
+
+    def position(self):
+        return self.__position
+
+    @property
+    def position(self, value):
+        if type(value) != tuple and len(value) != 2:
+            if type(value[0]) != int and type(value[1]) != int:
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
