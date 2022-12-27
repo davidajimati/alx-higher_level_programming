@@ -1,6 +1,12 @@
 #!/usr/bin/python3
-"""Class docstring"""
+"""Class docstring
+    Math Library Import
+"""
 import math
+
+'''
+Define magic class
+'''
 
 
 class MagicClass:
