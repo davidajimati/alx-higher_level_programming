@@ -33,8 +33,9 @@ class Node:
 
         @next_node.setter
         def next_node(self, value):
-            if type(value) != type(Node) and value is not None:
-                raise TypeError("next_node must be a Node object")
+            if value is not None and type(value) != Node:
+                raise TypeError('next_node must be a Node object')
+            self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -52,9 +53,6 @@ class SinglyLinkedList:
         This function inserts nodes and arranges them in
         ascending order of their data (integers)
         '''
-        if not isinstance(value, int):
-            raise TypeError("data must be an integer")
-
         new = Node(value)
         if not self.head:
             self.head = new
