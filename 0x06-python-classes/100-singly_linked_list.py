@@ -3,6 +3,8 @@
     Application of singly linked list Data structure
     Python Implementation.
 '''
+
+
 class Node:
     '''
     Declaration of a singly linked list node structure
