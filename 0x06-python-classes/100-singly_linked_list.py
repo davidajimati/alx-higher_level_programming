@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+'''
+    Application of singly linked list Data structure
+    Python Implementation.
+'''
 class Node:
     '''
     Declaration of a singly linked list node structure
-    Python Implementation.
     '''
 
     def __init__(self, data, next_node=None):
