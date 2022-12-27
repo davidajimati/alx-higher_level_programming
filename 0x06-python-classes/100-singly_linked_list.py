@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 class Node:
+    '''
+    Declaration of a singly linked list node structure
+    Python Implementation.
+    '''
+
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -25,10 +30,20 @@ class Node:
 
 
 class SinglyLinkedList:
+    '''
+    Definition of a node of the linked list
+    '''
+
     def __init__(self):
+        '''initiator (constructor)
+        '''
         self.head = None
 
     def sorted_insert(self, value):
+        '''
+        This function inserts nodes and arranges them in
+        ascending order of their data (integers)
+        '''
         new = Node(value)
         if not self.head:
             self.head = new
@@ -47,6 +62,9 @@ class SinglyLinkedList:
         node.next_node = new
 
     def __str__(self):
+        '''
+        method to modify the print function
+        '''
         ret = ""
         read = self.head
 
