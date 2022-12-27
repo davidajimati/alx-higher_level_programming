@@ -29,25 +29,22 @@ class SinglyLinkedList:
         self.head = None
 
     def sorted_insert(self, value):
-        node = Node(value)
-        if self.head == None:
-            self.head = node
+        new = Node(value)
+        if not self.head:
+            self.head = new
             return
 
-        trav = self.head
-        while trav.next_node and trav.data < value:
-            if value > trav.data:
-                node.next_node = trav.next_node
-                trav.next_node = node
-                return
+        if value < self.head.data:
+            new.next_node = self.head
+            self.head = new
+            return
 
-            if value < self.head.data:
-                node.next_node = self.head
-                self.head = node
-                return
-
-            trav = trav.next_node
-        trav.next_node = node
+        node = self.head
+        while node.next_node and node.next_node.data < value:
+            node = node.next_node
+        if node.next_node:
+            new.next_node = node.next_node
+        node.next_node = new
 
     def __str__(self):
         ret = ""
@@ -57,18 +54,3 @@ class SinglyLinkedList:
             ret += str(read.data) + '\n'
             read = read.next_node
         return ret[:-1]
-
-
-sll = SinglyLinkedList()
-sll.sorted_insert(2)
-sll.sorted_insert(5)
-sll.sorted_insert(3)
-sll.sorted_insert(10)
-sll.sorted_insert(1)
-sll.sorted_insert(-4)
-sll.sorted_insert(-3)
-sll.sorted_insert(4)
-sll.sorted_insert(5)
-sll.sorted_insert(12)
-sll.sorted_insert(3)
-print(sll)
