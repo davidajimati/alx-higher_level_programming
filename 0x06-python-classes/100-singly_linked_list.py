@@ -55,9 +55,6 @@ class SinglyLinkedList:
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
 
-        if type(value) != type(Node) and value is not None:
-            raise TypeError("next_node must be a Node object")
-
         new = Node(value)
         if not self.head:
             self.head = new
