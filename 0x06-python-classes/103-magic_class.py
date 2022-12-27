@@ -3,13 +3,16 @@
     Math Library Import
 """
 import math
-
 '''
 Define magic class
 '''
 
 
 class MagicClass:
+    '''
+    Define magic class
+    '''
+
     def __init__(self, radius=0):
         """Init docstring
         """
