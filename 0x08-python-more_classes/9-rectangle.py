@@ -81,12 +81,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        cls.width = size
-        cls.height = size
-
-
-
-
-my_square = Rectangle.square(5)
-print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
-print(my_square)
+        cls.width, cls.height = size, size
+        return cls(cls.width, cls.height)
