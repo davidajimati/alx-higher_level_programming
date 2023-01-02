@@ -8,6 +8,7 @@ class Rectangle:
     '''
     This class contains the definition of the class 'Rectangle'
     '''
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -22,7 +23,8 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        if value:
+            self.__width = value
 
     @property
     def height(self):
@@ -34,4 +36,5 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("eight must be >= 0")
-        self.__height = value
+        if value:
+            self.__height = value
