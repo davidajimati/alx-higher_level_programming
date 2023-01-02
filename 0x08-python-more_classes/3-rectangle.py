@@ -44,22 +44,12 @@ class Rectangle:
         return (2 * (self.height * self.width))
 
     def __str__(self):
+        rect = ''
+        if self.width == 0 and self.height == 0:
+            return rect
+
         for i in range(self.height):
-            for j in range(self.width):
-                print("#", end="")
-            print('')
-        return ('')
-
-
-# my_rectangle = Rectangle(2, 4)
-# print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-# print(str(my_rectangle))
-# print(repr(my_rectangle))
-
-# print("--")
-
-# my_rectangle.width = 10
-# my_rectangle.height = 3
-# print(my_rectangle)
-# print(repr(my_rectangle))
+            rect += ("#" * self.width)
+            if i is not self.height - 1:
+                rect += '\n'
+        return (rect)
