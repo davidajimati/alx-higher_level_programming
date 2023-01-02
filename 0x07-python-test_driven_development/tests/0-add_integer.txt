@@ -1,0 +1,36 @@
+Using the ``0-add_integer.py`` module
+===============================
+Using the   ``add_integer`` function
+------------------------------------
+
+This text is to test the ``add_integer`` function
+first `import` the `add_integer` function
+
+>>> add_integer = __import__("0-add_integer").add_integer
+>>> add_integer(1, 4)
+5
+
+>>> add_integer(7, 6.4)
+13
+
+>>> add_integer("hey", 6.5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(4.5, "hyt")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(5.67, 4.56)
+10
+
+>>> add_integer(130, 4.56)
+134
+
+>>> add_integer(True, 456)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer('fk', False)
+Traceback (most recent call last):
+TypeError: a must be an integer
