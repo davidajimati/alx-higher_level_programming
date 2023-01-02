@@ -45,6 +45,8 @@ class Rectangle:
         return (2 * (self.height + self.width))
 
     def __str__(self):
+        if not self.width or not self.height:
+            print("Bye rectangle...")
         rect = ""
         if self.width == 0 and self.height == 0:
             return rect
@@ -57,3 +59,6 @@ class Rectangle:
 
     def __repr__(self):
         return ('Rectangle({}, {})' .format(self.width, self.height))
+
+    def __del__(self):
+        print("Bye rectangle...")
