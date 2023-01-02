@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-'''
-Pyhton OOP - more classes - Task 1
-'''
+"""
+This is the "Rectangle"  module.
+This module provides a simple Rectangle class.
+"""
 
 
 class Rectangle:
-    '''
-    This class contains the definition of the class 'Rectangle'
-    '''
+    """A Rectangle class with attributes width and height, and
+    methods area, perimeter, print, and str.
+    """
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -15,7 +16,7 @@ class Rectangle:
 
     @property
     def width(self):
-        return (self.__width)
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -27,12 +28,12 @@ class Rectangle:
 
     @property
     def height(self):
-        return (self.__height)
+        return self.__height
 
     @height.setter
     def height(self, value):
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("eight must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
