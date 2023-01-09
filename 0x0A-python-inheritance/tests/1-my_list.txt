@@ -29,3 +29,7 @@ class and one method
 >>> sec.append(12)
 >>> sec.print_sorted()
 [2, 12, 13, 14, 21, 54, 90]
+>>>
+>>> test = MyList()
+>>> test.print_sorted()
+[]
