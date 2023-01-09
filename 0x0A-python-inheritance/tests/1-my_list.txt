@@ -1,0 +1,31 @@
+==========================
+Doctest to test the 'my-list' module
+==========================
+
+This is easy because this module contains only one
+class and one method
+--------------------------
+:: testing only with integers
+:: First test
+>>> MyList = __import__('1-my_list').MyList
+>>> new = MyList()
+>>> new.append(4)
+>>> new.append(7)
+>>> new.append(9)
+>>> new.append(43)
+>>> new.append(13)
+>>> new.print_sorted()
+[4, 7, 9, 13, 43]
+>>>
+>>>
+>>>
+>>> sec = MyList()
+>>> sec.append(14)
+>>> sec.append(90)
+>>> sec.append(21)
+>>> sec.append(13)
+>>> sec.append(54)
+>>> sec.append(2)
+>>> sec.append(12)
+>>> sec.print_sorted()
+[2, 12, 13, 14, 21, 54, 90]
