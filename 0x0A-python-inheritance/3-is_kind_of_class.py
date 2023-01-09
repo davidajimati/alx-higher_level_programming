@@ -1,4 +1,4 @@
-#!/usr.bin/python3
+#!/usr/bin/python3
 
 '''THis module shows if a class is a subclass of another'''
 
