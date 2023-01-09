@@ -1,0 +1,21 @@
+============================================
+How to use 0-lookup.py
+============================================
+
+This library is very simple, since it only has one function called
+ ''lookup(obj)''.
+
+Numbers:
+========
+::With examples in the main.py file
+>>> class MyClass1(object):
+>>>     pass
+>>> class MyClass2(object):
+>>>     my_attr1 = 3
+>>>
+>>>     def my_meth(self):
+>>>         pass
+>>>
+>>> print(lookup(MyClass1))
+>>> print(lookup(MyClass2))
+>>> print(lookup(int))
