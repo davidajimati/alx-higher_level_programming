@@ -11,6 +11,6 @@ can't add new attribute if the object can’t have new attribute
 
 def add_attribute(object, item, value):
     ''' Function declaration '''
-    if hasattr(object, "__dict__") == False:
+    if hasattr(object, "__dict__") is False:
         raise TypeError("can't add new attribute")
     setattr(object, item, value)
