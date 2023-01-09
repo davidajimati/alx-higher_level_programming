@@ -10,6 +10,7 @@ can't add new attribute if the object can’t have new attribute
 
 
 def add_attribute(object, item, value):
+    ''' Function declaration '''
     if object:
         setattr(object, item, value)
         return
