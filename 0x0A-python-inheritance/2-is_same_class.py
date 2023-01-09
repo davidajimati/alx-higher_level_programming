@@ -6,5 +6,4 @@
 
 def is_same_class(obj, a_class):
     ''' IS SAME CLASS '''
-    state = isinstance(obj, a_class)
-    return (state)
+    return type(obj) is a_class
