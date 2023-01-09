@@ -1,0 +1,24 @@
+==========================
+Doctest to test the '7-base_geometry' module
+==========================
+
+This module contains only one
+class and one method
+--------------------------
+Testing with integers and 'string' names
+===========================
+
+:: Each input must have a string and an integer value
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> t = BaseGeometry()
+
+:: Try with a string and an integer
+>>> t.integer_validator("my_int", 12)
+
+>>> t.integer_validator("width", 89)
+
+>>> t.integer_validator("width", "89")
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
