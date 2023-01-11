@@ -15,4 +15,4 @@ def save_to_json_file(my_obj, filename):
 
     with open(filename, 'r') as file:
         out = json.load(file)
-        print(out)
+        # print(out)
