@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''
-This module builds on the module on 9-student.py
-returns only the key pairs if attrs is a list of strings
-else returns all the dictionary values
+This module builds on the module on 10-student.py
+And a Public method def reload_from_json(self, json):
+that replaces all attributes of the Student instance:
 '''
 
 
@@ -26,3 +26,9 @@ class Student:
                 else:
                     ret_dict[i] = self.__dict__[i]
             return ret_dict
+
+    def reload_from_json(self, json):
+        ''' Replaces the students details '''
+        self.first_name = json["first_name"]
+        self.last_name = json["last_name"]
+        self.age = json["age"]
