@@ -21,5 +21,8 @@ class Student:
         else:
             ret_dict = {}
             for i in attrs:
-                ret_dict += self.__dict__[i]
+                if i not in self.__dict__:
+                    continue
+                else:
+                    ret_dict[i] = self.__dict__[i]
             return ret_dict
