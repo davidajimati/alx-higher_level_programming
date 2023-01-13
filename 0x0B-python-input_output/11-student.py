@@ -28,7 +28,10 @@ class Student:
             return ret_dict
 
     def reload_from_json(self, json):
-        ''' Replaces the students details '''
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        try:
+            ''' Replaces the students details '''
+            self.first_name = json["first_name"]
+            self.last_name = json["last_name"]
+            self.age = json["age"]
+        except Exception:
+            pass
