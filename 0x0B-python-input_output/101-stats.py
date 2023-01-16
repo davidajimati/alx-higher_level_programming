@@ -29,6 +29,7 @@ def print_status():
             for key in status_codes.keys():
                 if status_codes[key] != 0:
                     print("{}: {}" .format(key, status_codes[key]))
+            exit(1)
 
         except Exception:
             continue
@@ -38,6 +39,7 @@ def print_status():
             for key in status_codes.keys():
                 if status_codes[key] != 0:
                     print("{}: {}" .format(key, status_codes[key]))
+            exit(1)
 
         counter += 1
 
