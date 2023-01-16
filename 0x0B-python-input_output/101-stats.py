@@ -41,6 +41,7 @@ def print_status():
                     print("{}: {}" .format(key, status_codes[key]))
 
         counter += 1
+    exit(1)
 
 
 if __name__ == "__main__":
