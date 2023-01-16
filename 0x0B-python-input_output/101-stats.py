@@ -17,12 +17,11 @@ def print_status():
     status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
                     "403": 0, "404": 0, "405": 0, "500": 0}
 
-    for l in sys.stdin:
-        line = l.split()
+    for out in sys.stdin:
+        line = out.split()
         try:
-            size = line[-1]
-            total_size += size
-            status = line[-2]
+            total_size += int(line[-1])
+            status = str(line[-2])
             status_codes[status] += 1
         except:
             continue
