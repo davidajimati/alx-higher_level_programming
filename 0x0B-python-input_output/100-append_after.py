@@ -11,13 +11,13 @@ def append_after(filename="", search_string="", new_string=""):
     Searches "filename" for "search_string"
     and appends "new_string_ after it
     '''
-    with open(filename, 'r+') as file:
-        for line in file:
-            if search_string in line:
-                line = line.rstrip()
-                file.write(line.replace(line, new_string))
-                print (line)
+    with open(filename, 'r') as file:
+        lines = file.readlines()
 
+    for line in range(len(lines)):
+        if search_string in lines[line]:
+            lines[line] = (lines[line] + new_string)
 
-
-append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
+    with open(filename, 'w') as file:
+        for line in lines:
+            file.write(line)
