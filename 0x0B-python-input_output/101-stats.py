@@ -12,7 +12,7 @@ import sys
 
 def print_status():
     ''' Function to compute and print the metrics'''
-    counter = 0
+    counter = 1
     total_size = 0
     status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
                     "403": 0, "404": 0, "405": 0, "500": 0}
@@ -34,12 +34,11 @@ def print_status():
         except Exception:
             continue
 
-        if (counter == 9):
+        if (counter % 10 == 0):
             print("File size: {}" .format(total_size))
             for key in status_codes.keys():
                 if status_codes[key] != 0:
                     print("{}: {}" .format(key, status_codes[key]))
-            exit(1)
 
         counter += 1
 
