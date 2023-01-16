@@ -23,22 +23,24 @@ def print_status():
             total_size += int(line[-1])
             status = str(line[-2])
             status_codes[status] += 1
-        except:
+
+        except KeyboardInterrupt:
+            print("File size: {}" .format(total_size))
+            for key in status_codes.keys():
+                if status_codes[key] != 0:
+                    print("{}: {}" .format(key, status_codes[key]))
+
+        except Exception:
             continue
 
         if (counter == 9):
             print("File size: {}" .format(total_size))
-            for key, value in status_codes:
+            for key in status_codes.keys():
                 if status_codes[key] != 0:
-                    print("{}: {}" .format(key, value))
-
-        if (counter < 9):
-            print("File size: {}" .format(total_size))
-            for key, value in status_codes:
-                if status_codes[key] != 0:
-                    print("{}: {}" .format(key, value))
+                    print("{}: {}" .format(key, status_codes[key]))
 
         counter += 1
+
 
 if __name__ == "__main__":
     print_status()
