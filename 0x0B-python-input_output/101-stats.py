@@ -34,6 +34,12 @@ def print_status():
         except Exception:
             continue
 
+        if (counter % 10 == 0):
+            print("File size: {}" .format(total_size))
+            for key in status_codes.keys():
+                if status_codes[key] != 0:
+                    print("{}: {}" .format(key, status_codes[key]))
+                counter = 0
         counter += 1
 
     print("File size: {}" .format(total_size))
