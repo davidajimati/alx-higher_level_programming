@@ -77,6 +77,6 @@ class Rectangle(Base):
     def display(self):
         ''' Prints the rectangle metrics with "#" symbol '''
         symbol = '#'
-        for x in self.width:
-            for y in self.height:
+        for x in self.height:
+            for y in self.width:
                 print(symbol)
