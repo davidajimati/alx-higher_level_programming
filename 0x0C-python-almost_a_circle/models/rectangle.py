@@ -78,7 +78,7 @@ class Rectangle(Base):
         ''' Prints the rectangle metrics with "#" symbol '''
         symbol = '#'
         for i in range(self.x):
-            print("", end="")
+            print("")
             for j in range(self.y):
                 print("", end="")
         for x in range(self.height):
