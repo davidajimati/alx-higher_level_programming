@@ -26,6 +26,7 @@ class Rectangle(Base):
     def width(self, value):
         '''sets width'''
         self.validator("width", value, metric=True)
+        self.__width = value
 
     @property
     def height(self):
