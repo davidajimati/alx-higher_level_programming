@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 '''
-Module contains a subclass that inherits fro Base
+Module contains a subclass that inherits from Base
 '''
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
