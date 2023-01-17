@@ -77,13 +77,8 @@ class Rectangle(Base):
     def display(self):
         ''' Prints the rectangle metrics with "#" symbol '''
         symbol = '#'
-        if self.x == 1:
-            pass
-        else:
-            for i in range(self.x):
-                print("")
-                for j in range(self.y):
-                    print("", end="")
+        xy = ('\n' * self.y + ' ' * self.x)
+        print(xy, end="")
 
         for x in range(self.height):
             for y in range(self.width):
