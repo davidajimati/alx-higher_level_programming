@@ -3,7 +3,7 @@
 '''
 Module contains a subclass that inherits fro Base
 '''
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -25,7 +25,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         '''sets width'''
-        self.validator("width", value, metric=True)
+        self.validator(value, "width", True)
         self.__width = value
 
     @property
@@ -36,7 +36,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         '''sets height'''
-        self.validator("height", value, metric=True)
+        self.validator(value, "height", True)
         self.__height = value
 
     @property
@@ -47,7 +47,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         '''sets height'''
-        self.validator("x", value, metric=False)
+        self.validator(value, "x", metric=False)
         self.__x = value
 
     @property
@@ -58,12 +58,12 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         '''sets y'''
-        self.validator("y", value, metric=False)
+        self.validator(value, "y", metric=False)
         self.__y = value
 
-    def validator(self, name, value, metric):
+    def validator(self, value, name, metric):
         ''' Validates integer inputs into setters '''
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{} must be an integer" .format(name))
         if metric and value <= 0:
             raise ValueError("{} must be > 0" .format(name))
