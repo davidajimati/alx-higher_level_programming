@@ -3,6 +3,7 @@
 '''
 Base class module
 '''
+import json
 
 
 class Base:
@@ -15,3 +16,11 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        '''Returns a list of dictionaries in JSON'''
+        if list_dictionaries is None or \
+                list_dictionaries == []:
+            return "[]"
+        ret = json.dumps(list_dictionaries)
+        return ret
