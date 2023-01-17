@@ -4,6 +4,7 @@
 Base class module
 '''
 import json
+import csv
 
 
 class Base:
@@ -56,6 +57,17 @@ class Base:
             new = None
         new.update(**dictionary)
         return new
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or not json_string:
+            return ("[]")
+        with open(json_string, 'r') as file:
+            data = json.loads(file)
+        elem = []
+        for x in data:
+            elem.append(x)
+        return (elem)
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
