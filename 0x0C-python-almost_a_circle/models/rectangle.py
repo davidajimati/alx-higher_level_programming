@@ -3,7 +3,7 @@
 '''
 Module contains a subclass that inherits fro Base
 '''
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -69,3 +69,7 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(name))
         elif not eq and value <= 0:
             raise ValueError("{} must be > 0".format(name))
+
+    def area(self):
+        ''' Returns the area of the rectangle'''
+        return (self.height * self.width)
