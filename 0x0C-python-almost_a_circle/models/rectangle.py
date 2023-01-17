@@ -111,5 +111,6 @@ class Rectangle(Base):
             self.__update(**kwargs)
 
     def to_dictionary(self):
+        ''' Dictionary of all attributes'''
         return {"id": self.id, "x": self.x,
                 "y": self.y, "width": self.width, "height": self.height}
