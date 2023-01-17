@@ -3,7 +3,7 @@
 '''
 Module contains a subclass that inherits fro Base
 '''
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
