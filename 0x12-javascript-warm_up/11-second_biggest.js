@@ -1,15 +1,10 @@
 #!/usr/bin/node
-const args = process.argv.slice(2);
+let args = process.argv.slice(2);
 
 if (args.length === 0 | Number(args[0]) === 1) {
   console.log(0);
 } else {
-  const myArr = args.map((i) => Number(i));
-  let ans = 0;
-  for (let i = 0; i < myArr.length; i++) {
-    if (myArr[i] !== Math.max(...myArr) & myArr[i] > ans) {
-      ans = myArr[i];
-    }
-  }
-  console.log(ans);
+  args = args.map((i) => Number(i));
+  args = args.sort((a, b) => a - b);
+  console.log(args[args.length - 2]);
 }
