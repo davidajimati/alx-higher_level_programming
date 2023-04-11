@@ -1,7 +1,7 @@
 #!/usr/bin/node
 let args = process.argv.slice(2);
 
-if (args.length === 0 | Number(args[0]) === 1) {
+if (args.length < 4) {
   console.log(0);
 } else {
   args = args.map((i) => Number(i));
