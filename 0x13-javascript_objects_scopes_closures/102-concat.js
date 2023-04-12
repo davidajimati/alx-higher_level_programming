@@ -14,7 +14,7 @@ writeInfo(fileC, c);
 
 function reader (filename) {
   try {
-    contents = fs.readFileSync(filename, 'utf8');
+    const contents = fs.readFileSync(filename, 'utf8');
     return contents;
   } catch (err) {
     console.log(err);
