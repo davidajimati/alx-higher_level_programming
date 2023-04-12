@@ -10,13 +10,11 @@ module.exports = class Square extends Rectangle {
   }
 
   charPrint(c) {
-    if (c != undefined) {
-      const symbol = c || 'X';
+    if (c === undefined) {
+      this.print;
     }
-    const { size } = this;
-
-    for (let i = 0; i < size; i++) {
-      console.log(symbol.repeat(size));
+    for (let i = 0; i < this.size; i++) {
+      console.log(symbol.repeat(this.size));
     }
   }
 };
