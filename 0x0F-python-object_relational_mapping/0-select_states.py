@@ -12,6 +12,7 @@ if __name__ == '__main__':
                          user=argv[1], passwd=argv[2], db=argv[3])
 
     cur = db.cursor()
-    res = cur.execute("SELECT * FROM  states ORDER BY states.id ASC;")
+    cur.execute("SELECT * FROM  states ORDER BY states.id ASC;")
+    res = cur.fetchall()
     for item in res:
         print(item)
