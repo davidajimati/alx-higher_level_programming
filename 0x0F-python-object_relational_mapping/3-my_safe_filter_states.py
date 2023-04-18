@@ -14,7 +14,7 @@ if __name__ == "__main__":
                          user=argv[1], passwd=argv[2], db=argv[3])
 
     search_query = (argv[4] + '%')
-    sql_query = """SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER
+    sql_query = """SELECT * FROM states WHERE name LIKE '{}' ORDER
                      BY states.id ASC""".format(search_query)
     cur = db.cursor()
     cur.execute(sql_query)
