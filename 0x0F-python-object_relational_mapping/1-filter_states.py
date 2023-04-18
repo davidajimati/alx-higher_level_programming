@@ -16,5 +16,6 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
     output = cur.fetchall()
     for state in output:
-        if state(0) == 'N':
+        if state[0] == 'N':
+            # print("{}, {}".format(state.id))
             print(state)
