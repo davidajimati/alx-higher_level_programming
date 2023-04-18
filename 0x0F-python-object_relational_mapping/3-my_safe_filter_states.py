@@ -14,7 +14,7 @@ if __name__ == "__main__":
                          user=argv[1], passwd=argv[2], db=argv[3])
 
     con = db.cursor()
-    con.execute("SELECT * FROM states WHERE name LIKE name=%s ORDER\
+    con.execute("SELECT * FROM states WHERE name=%s ORDER\
                      BY states.id ASC", (argv[4],))
     items = con.fetchall()
     for item in items:
