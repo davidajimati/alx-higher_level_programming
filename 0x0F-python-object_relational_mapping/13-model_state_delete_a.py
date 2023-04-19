@@ -10,7 +10,7 @@ if __name__ == "__main__":
     from model_state import Base, State
 
     engine = create_engine(
-        f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}",
+        f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}",
         pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
