@@ -16,7 +16,13 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    new_state = State(id=6, name='Louisiana')
-    session.add(new_state)
-    session.commit()
-    print(new_state.id)
+    # check if the state already exists
+    check = session.query(State).filter(State.name.like('Louisiana')).all()
+
+    if check:
+        print("", end="")
+    else:
+        new_state = State(id=6, name='Louisiana')
+        session.add(new_state)
+        session.commit()
+        print(new_state.id)
