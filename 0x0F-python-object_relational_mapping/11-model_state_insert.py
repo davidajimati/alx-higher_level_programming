@@ -17,12 +17,13 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # check if the state already exists
-    check = session.query(State).filter(State.name.like('Louisiana')).all()
+    check = session.query(State).filter_by(State.name.like('Louisiana')).first()
 
     if check:
-        print("", end="")
+        session.delete(check)
+        print("removed")
     else:
-        new_state = State(id=6, name='Louisiana')
+        new_state = State(name='Louisiana')
         session.add(new_state)
         session.commit()
         print(new_state.id)
