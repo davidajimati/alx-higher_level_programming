@@ -23,5 +23,3 @@ if __name__ == "__main__":
     if cont_as:
         for item in cont_as:
             print("{}: {}".format(item.id, item.name))
-    else:
-        print("Nothing")
