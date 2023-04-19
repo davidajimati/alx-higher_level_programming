@@ -23,4 +23,5 @@ if __name__ == "__main__":
     if cont_as:
         for item in cont_as:
             session.delete(item)
-            session.commit()
+        session.commit()
+        session.close()
