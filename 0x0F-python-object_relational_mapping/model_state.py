@@ -9,6 +9,9 @@ from sys import argv
 from sqlalchemy import Column, Integer, CHAR, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
+'''
+import of necessary modules
+'''
 Base = declarative_base
 
 
@@ -23,6 +26,9 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
+'''
+Below: specifies the url and the command to create the engine
+'''
 engine = create_engine(
     'mysql://{}:{}@localhost:3306/{}'.format(argv[1], argv[2], argv[3]))
 Base.metadata.create_all(engine)
