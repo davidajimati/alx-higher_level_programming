@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session(engine)
 
     cont_as = session.query(State).filter(
-        State.name.like('%a%')).order_by(State.id).all()
+        State.name.like('%a%')).order_by(State.id.asc()).all()
     if cont_as:
         for item in cont_as:
             print("{}: {}".format(item.id, item.name))
