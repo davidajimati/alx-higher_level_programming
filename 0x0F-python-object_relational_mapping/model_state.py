@@ -13,7 +13,9 @@ Base = declarative_base
 
 
 class State(Base):
-    """Class States"""
+    """
+    Class States - the class that the objects belong to
+    """
 
     __tablename__ = 'states'
     id = Column(Integer, autoincrement=True, unique=True,
