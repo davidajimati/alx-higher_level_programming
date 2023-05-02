@@ -8,7 +8,7 @@ def find_peak(list_of_integers):
     '''
     Function declaration
     '''
-    x = 0
+    x = list_of_integers[0]
     for i in list_of_integers:
         if i > x:
             x = i
