@@ -3,6 +3,7 @@
 This function finds the peak of a  give set of numbers
 """
 
+
 def find_peak(list_of_integers):
     '''
     Function declaration
@@ -11,4 +12,4 @@ def find_peak(list_of_integers):
     for i in list_of_integers:
         if i > x:
             x = i
-    return(x)
+    return (x)
