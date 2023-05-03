@@ -5,11 +5,10 @@ script that takes in a URL, sends a request to the URL
     found in the header of the response.
 '''
 
-from sys import argv
+import sys
 import urllib.request
 
-argv[1]
-url = urllib.request.Request(argv[1])
+url = urllib.request.Request(sys.argv[1])
 with urllib.request.urlopen(url) as res:
     r = res.info().get('X-Request-Id')
     print(r)
