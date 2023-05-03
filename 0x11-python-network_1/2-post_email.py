@@ -8,6 +8,7 @@ Takes in a URL and an email, sends a POST request to
 if __name__ == "__main__":
 
     from sys import argv
+    import urllib.parse
     import urllib.request
 
     email = argv[1]
@@ -16,4 +17,5 @@ if __name__ == "__main__":
     full_url = urllib.request.Request(url, email)
     with urllib.request.urlopen(full_url) as response:
         body = response.read()
+        parsed_body = urllib.parse.urlparse(body)
         print(body.decode('utf-8'))
