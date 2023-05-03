@@ -11,11 +11,16 @@ if __name__ == "__main__":
     import urllib.parse
     import urllib.request
 
-    email = argv[1]
-    url = argv[2]
+    email = argv[2]
+    url = argv[1]
 
-    full_url = urllib.request.Request(url, email)
-    with urllib.request.urlopen(full_url) as response:
+    # encode email
+    value = urllib.parse.urlencode(url)
+    value = value.encode
+
+    full_url = url + '?' + value
+    request = urllib.request.Request(url, value)
+    with urllib.request.urlopen(request) as response:
         body = response.read()
         parsed_body = urllib.parse.urlparse(body)
         print(body.decode('utf-8'))
