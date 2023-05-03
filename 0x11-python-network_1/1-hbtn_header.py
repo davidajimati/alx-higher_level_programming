@@ -11,6 +11,5 @@ import urllib.request
 argv[1]
 url = urllib.request.Request(argv[1])
 with urllib.request.urlopen(url) as res:
-    r = res.read()
-
-    print(r.X-Request-Id)
+    r = res.info().get('X-Request-Id')
+    print(r)
