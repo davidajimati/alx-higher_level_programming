@@ -13,17 +13,15 @@ if __name__ == "__main__":
         lit = argv[1]
     else:
         lit = ""
-
     load = {'q': lit}
 
-    r = requests.post('http://0.0.0.0:5000/search_user', params=load)
+    r = requests.post('http://0.0.0.0:5000/search_user', data=load)
 
     # check if resp is json
     try:
         resp = r.json()
         if resp != {}:
-            for k, v in resp.items():
-                print("{} {}".format(k, v))
+            print("[{}] {}".format(resp.get('id'), resp.get('name')))
         else:
             print("No result")
     except Exception:
