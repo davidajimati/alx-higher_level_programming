@@ -10,20 +10,21 @@ from sys import argv
 if __name__ == "__main__":
 
     if len(argv) > 1:
-        q = argv[1]
+        lit = argv[1]
     else:
-        q = ""
+        lit = ""
 
-    r = requests.post('http://0.0.0.0:5000/search_user', params=q)
-    resp = r.json()
+    load = {'q': lit}
+
+    r = requests.post('http://0.0.0.0:5000/search_user', params=load)
 
     # check if resp is json
-    if type(resp) == dict:
-
-        if len(resp) != 0:
+    try:
+        resp = r.json()
+        if resp != {}:
             for k, v in resp.items():
                 print("{} {}".format(k, v))
         else:
             print("No result")
-    else:
+    except Exception:
         print('Not a valid JSON')
