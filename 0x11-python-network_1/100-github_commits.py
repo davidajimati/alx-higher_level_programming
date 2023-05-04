@@ -17,7 +17,7 @@ if __name__ == "__main__":
     try:
         for i in range(10):
             print("{}: {}".format(
-            comt[i].get("sha"),
-            comt[i].get("commit").get("author").get("name")))
+                comt[i].get("sha"),
+                comt[i].get("commit").get("author").get("name")))
     except Exception:
         pass
