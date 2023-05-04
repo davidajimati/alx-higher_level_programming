@@ -16,10 +16,8 @@ if __name__ == "__main__":
 
     if r.status_code == 200:
         try:
-            i = 10
-            while i > 0:
+            for i in range(10):
                 print("{}: {}" .format(commits[i].get('sha'), commits[i].get(
                     'commit').get('author').get('name')))
-                i -= 1
         except Exception:
             pass
