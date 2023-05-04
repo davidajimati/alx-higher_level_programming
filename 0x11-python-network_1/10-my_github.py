@@ -9,13 +9,13 @@ import requests
 
 if __name__ == "__main__":
 
-    if len(argv) > 2:
-        username = argv[1]
-        password = argv[2]
+    username = argv[1]
+    password = argv[2]
 
-        r = requests.get('https://api.github.com/user', auth=(username, password))
+    r = requests.get('https://api.github.com/user',
+                        auth=(username, password))
 
-        if r.status_code == 200:
-            print("{}".format(r.get("id")))
-        else:
-            print("None")
+    if r.status_code == 200:
+        print("{}".format(r.get("id")))
+    else:
+        print("None")
