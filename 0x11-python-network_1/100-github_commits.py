@@ -12,12 +12,12 @@ if __name__ == "__main__":
 
     url = "https://api.github.com/repos/{}/{}/commits".format(repo, owner)
     r = requests.get(url)
-    commits = r.json()
+    comt = r.json()
 
-    if r.status_code == 200:
-        try:
-            for i in range(10):
-                print("{}: {}" .format(commits[i].get('sha'), commits[i].get(
-                    'commit').get('author').get('name')))
-        except Exception:
-            pass
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+            comt[i].get("sha"),
+            comt[i].get("commit").get("author").get("name")))
+    except Exception:
+        pass
