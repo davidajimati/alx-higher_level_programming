@@ -10,10 +10,10 @@ from sys import argv
 if __name__ == "__main__":
 
     if len(argv) > 1:
-        lit = argv[1]
+        leta = argv[1]
     else:
-        lit = ""
-    load = {'q': lit}
+        leta = ""
+    load = {"q": leta}
 
     r = requests.post('http://0.0.0.0:5000/search_user', data=load)
 
@@ -24,5 +24,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(resp.get('id'), resp.get('name')))
         else:
             print("No result")
-    except Exception:
+    except ValueError:
         print('Not a valid JSON')
