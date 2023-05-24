@@ -6,7 +6,7 @@ const target = process.argv[2];
 request(url + target, (error, response, body) => {
   if (error) throw error;
   else {
-    const ans = pushJSON.parse(body);
+    const ans = JSON.parse(body);
     console.log(ans.title);
   }
 });
