@@ -3,6 +3,8 @@
 - JavaScript
 - DOM Manipulation
 
+![Forgive me!](./1f1ihd.jpg)
+
 ### General
 - Why JQuery make front-end programming so easy
 - How to select HTML elements in JavaScript
