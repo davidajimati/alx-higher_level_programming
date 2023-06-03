@@ -1,12 +1,8 @@
-$(document).ready(function () {
-  $.ajax({
-    url: 'https://fourtonfish.com/hellosalut/?lang=fr',
-    method: 'GET',
-    success: function (response) {
-      $('div#hello').text(response.hello);
-    },
-    error: function (error) {
-      console.log(error);
-    }
-  });
-});
+const mydiv = document.querySelector("#hello");
+
+fetch("https://fourtonfish.com/hellosalut/?lang=fr")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.log("error", error));
