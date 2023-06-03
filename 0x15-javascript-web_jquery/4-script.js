@@ -1,5 +1,6 @@
-$(document).ready(function () {
-  $('div#toggle_header').click(function () {
-    $('header').toggleClass('red green');
-  });
-});
+const toggle = document.querySelector("#toggle_header");
+const header = document.querySelector("header");
+toggle.onclick = () => {
+  header.classList.toggle("green");
+  header.classList.toggle("red");
+}
