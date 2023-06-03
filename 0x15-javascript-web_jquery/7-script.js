@@ -1,12 +1,7 @@
-$(document).ready(function () {
-  $.ajax({
-    url: 'https://swapi-api.alx-tools.com/api/people/5/?format=json',
-    method: 'GET',
-    success: function (response) {
-      $('div#character').text(response.name);
-    },
-    error: function (error) {
-      console.log(error);
-    }
+fetch("https://swapi-api.alx-tools.com/api/people/5/?format=json")
+  .then(response => response.json()).then(data => {
+    const content = data.name;
+    document.querySelector("#character").textContent = content;
+  }).catch(error => {
+    console.log("error:", error);
   });
-});
