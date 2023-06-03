@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  $("div#update_header").click(function() {
-    $("header").text("New Header!!!");
-  });
-});
+const update = document.querySelector("#update_header");
+
+update.onclick = () => {
+  document.querySelector("header").textContent = "New Header!!!";
+}
